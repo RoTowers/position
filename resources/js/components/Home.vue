@@ -91,7 +91,7 @@
     },
 
     mounted() {
-        axios.get('/api/statistics/get').then(response => {
+        axios.get('/statistics/get').then(response => {
             this.statistics = response.data;
             this.generateChart();
         }).catch(error => {
@@ -117,7 +117,7 @@
 
     methods:{
         add:function(){
-            axios.post('/api/statistics/add', this.fields).then(response => {
+            axios.post('/statistics/add', this.fields).then(response => {
                 this.fields.date = (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10);
                 this.fields.amount = "";
                 this.errors = null;

@@ -95,7 +95,7 @@ export default {
   methods:{
       login:function(){
         this.errors = {};
-        axios.post('/api/login', this.fields).then(response => {
+        axios.post('/login', this.fields).then(response => {
           window.location.href = "/home";
         }).catch(error => {
             if (error.response.status === 422) {

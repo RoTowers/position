@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/statistics/add', [App\Http\Controllers\StatisticController::class, 'create'])->name('statistics-add');
+Route::get('/statistics/get', [App\Http\Controllers\StatisticController::class, 'read'])->name('statistics-get');
